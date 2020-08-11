@@ -3,6 +3,15 @@ const Booking = require("../models/bookingModel");
 const catchAsync = require("../utils/catchAsync");
 const AppError = require("../utils/appError");
 
+// middleware used to show alerts for templates when needed
+exports.alerts = (req, res, next) => {
+  const { alert } = req.query;
+  // getCheckoutSession in bookingController passes the query alert=booking in the url
+  if (alert === "booking") {
+    res.locals.alert = "Your booking was successful!";
+  }
+};
+
 // Used by overview template to view all tours on home page
 exports.getOverview = catchAsync(async (req, res, next) => {
   // Get all tours data from collection
