@@ -27,7 +27,7 @@ const createSendToken = (user, statusCode, res) => {
   };
 
   // The cookie will only be sent with HTTPS during production
-  // if (process.env.NODE_ENV === "production") cookieOptions.secure = true;
+  if (process.env.NODE_ENV === "production") cookieOptions.secure = true;
 
   res.cookie("jwt", token, cookieOptions);
 
