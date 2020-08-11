@@ -87,4 +87,4 @@ if (bookBtn) {
 
 // data-alert attribute was added to the body in base.pug
 const alertMessage = document.querySelector("body").dataset.alert;
-if (alert) showAlert("success", alertMessage);
+if (alertMessage) showAlert("success", alertMessage);

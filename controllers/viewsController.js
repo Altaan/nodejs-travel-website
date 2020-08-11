@@ -10,6 +10,7 @@ exports.alerts = (req, res, next) => {
   if (alert === "booking") {
     res.locals.alert = "Your booking was successful!";
   }
+  next();
 };
 
 // Used by overview template to view all tours on home page
